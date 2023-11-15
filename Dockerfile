@@ -16,5 +16,5 @@ EXPOSE 5000
 # Define environment variable
 ENV NAME World
 
-# Run app.py when the container launches
-CMD ["python", "main.py"]
+# Run app.py using gunicorn when the container launches
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "main:app"]
